@@ -9,11 +9,11 @@ var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
 
 // Initialize a variable for the computers random pick of a letter
 var computerChoice = alphabet[Math.floor(Math.random() * alphabet.length)];
-console.log(computerChoice)
-
+console.log("original " + computerChoice)
 // set a restart function
 function startPoint() {
- return ComputerChoice;
+    computerChoice = alphabet[Math.floor(Math.random() * alphabet.length)];
+    console.log(computerChoice)
 }
 
 // Initialize variables that hold references to the places in the HTML where we want to display things.
@@ -25,9 +25,11 @@ var guessesSoFarText = document.getElementById("guesses-so-far-text");
 // Create the function for the events and what happens on the events
 document.onkeyup = function (event) {
 
-    // Determine which key is pressed and check it to the computer's choice
-     var userGuess = event.key;
-     if (userGuess === computerChoice) {
+    // Determine which key is pressed and check it to the computer's choice 
+    // add toLowerCase to clean user input
+    var userGuess = event.key.toLowerCase();
+    userGuess
+    if (userGuess === computerChoice) {
         wins++;
         winsText.textContent = "Wins: " + wins;
         startPoint();
@@ -40,6 +42,8 @@ document.onkeyup = function (event) {
     if (turns === 0) {
         losses++;
         lossesText.textContent = "Losses: " + losses;
+        turns = 9;
+        guessesSoFarText.textContent = ""
         startPoint();
     }
 
