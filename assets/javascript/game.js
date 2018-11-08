@@ -11,6 +11,11 @@ var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
 var computerChoice = alphabet[Math.floor(Math.random() * alphabet.length)];
 console.log(computerChoice)
 
+// set a restart function
+function startPoint() {
+ return ComputerChoice;
+}
+
 // Initialize variables that hold references to the places in the HTML where we want to display things.
 var winsText = document.getElementById("wins-text");
 var lossesText = document.getElementById("losses-text");
@@ -25,16 +30,17 @@ document.onkeyup = function (event) {
      if (userGuess === computerChoice) {
         wins++;
         winsText.textContent = "Wins: " + wins;
+        startPoint();
     }
     else {
         turns--;
         guessesLeftText.textContent = "Guesses Left: " + turns;
+        guessesSoFarText.textContent += userGuess + ", "
     }
     if (turns === 0) {
         losses++;
         lossesText.textContent = "Losses: " + losses;
+        startPoint();
     }
-
-    guessesSoFarText = "k"
 
 }
