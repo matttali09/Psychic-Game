@@ -32,6 +32,8 @@ document.onkeyup = function (event) {
     if (userGuess === computerChoice) {
         wins++;
         winsText.textContent = "Wins: " + wins;
+        turns = 9;
+        guessesSoFarText.textContent = ""
         startPoint();
     }
     else {
