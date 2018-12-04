@@ -1,3 +1,20 @@
+/* body styling */
+body {
+    background: url("../images/purple-fabric.jpg");
+}
+/* container styling */
+.container {
+    border: 1px solid red;
+    background: url("../images/crystal-ball.jpg");
+    color: white;
+}
+/* typeography */
 h1 {
-    color: #4aaaa5
+    color: #4aaaa5!important;
+    text-shadow: 2px 2px gray;
+}
+p {
+    font-size: 25px;
+    color: white;
+    text-shadow: 2px 2px #ff9800b5
 }
